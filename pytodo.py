@@ -7,7 +7,6 @@ from datetime import datetime, timezone
 
 import click
 from click_aliases import ClickAliasedGroup
-from tabulate import tabulate
 
 PENDING = "pending"
 PENDING_SYMBOL = ("\033[91m" "\u2715" "\033[0m")
