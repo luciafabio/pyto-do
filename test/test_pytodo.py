@@ -7,7 +7,7 @@ from click.testing import CliRunner
 module_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, module_path + '/../')
 
-from pytodo import entry_point
+from pycli_todo import entry_point
 
 RUNNER = CliRunner()
 PENDING_SYMBOL = "\u2715"

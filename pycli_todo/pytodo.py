@@ -1,7 +1,6 @@
 """Simple to-do list in your terminal! Created with Python :-)"""
 
 import os
-import pkg_resources
 import pathlib
 import json
 from datetime import datetime, timezone
@@ -17,8 +16,6 @@ WORKING_SYMBOL = ("\033[93m" "\u26A0" "\033[0m")
 DONE = "done"
 DONE_SYMBOL = ("\033[92m" "\u2713" "\033[0m")
 
-pkg_version = pkg_resources.get_distribution('pytodo').version
-
 @click.group(cls=ClickAliasedGroup, invoke_without_command=True)
 @click.option(
     "-d", "--done",
@@ -30,7 +27,7 @@ pkg_version = pkg_resources.get_distribution('pytodo').version
     default=False,
     is_flag=True,
     help="print all todos")
-@click.version_option(pkg_version, "-v", "--version")
+@click.version_option("1.0.1", "-v", "--version")
 @click.help_option("-h", "--help")
 @click.pass_context
 def entry_point(ctx, done, alltodos):

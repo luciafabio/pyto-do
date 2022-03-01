@@ -4,9 +4,10 @@
 
 ~~copied~~ Inspired by [Swatto's td app](https://github.com/Swatto/td) 
 
-## Usage
 
 ### Installation
+
+> pip install pycli-todo
 
 ### Information
 
