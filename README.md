@@ -19,8 +19,6 @@ Usage: td [OPTIONS] COMMAND [ARGS]...
 
   pyToDo - your Python to-do manager for your terminal.
 
-  If no command is passed, print to-do list.
-
 Options:
   -d, --done     print done todos
   -a, --all      print all todos
