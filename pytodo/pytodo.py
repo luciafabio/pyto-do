@@ -1,12 +1,14 @@
 """Simple to-do list in your terminal! Created with Python :-)"""
 
 import os
+import pkg_resources
 import pathlib
 import json
 from datetime import datetime, timezone
 
 import click
 from click_aliases import ClickAliasedGroup
+
 
 PENDING = "pending"
 PENDING_SYMBOL = ("\033[91m" "\u2715" "\033[0m")
@@ -15,6 +17,7 @@ WORKING_SYMBOL = ("\033[93m" "\u26A0" "\033[0m")
 DONE = "done"
 DONE_SYMBOL = ("\033[92m" "\u2713" "\033[0m")
 
+pkg_version = pkg_resources.get_distribution('pytodo').version
 
 @click.group(cls=ClickAliasedGroup, invoke_without_command=True)
 @click.option(
@@ -27,14 +30,13 @@ DONE_SYMBOL = ("\033[92m" "\u2713" "\033[0m")
     default=False,
     is_flag=True,
     help="print all todos")
-@click.version_option(None, "-v", "--version")
+@click.version_option(pkg_version, "-v", "--version")
 @click.help_option("-h", "--help")
 @click.pass_context
 def entry_point(ctx, done, alltodos):
     """
     pyToDo - your Python to-do manager for your terminal.
-
-    If no command is passed, print to-do list."""
+    """
     if not ctx.invoked_subcommand:
         todo_file = get_todo_list()
         todos = get_tasks(todo_file)

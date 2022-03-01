@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytodo"
-version = "0.1.0"
+version = "1.0.0"
 description = "Simple to-do list for your terminal, made in Python"
 authors = ["lufa"]
 
